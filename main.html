@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion - Get Robux</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ecb9d9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+            flex-direction: column;
+            animation: fadeIn 2s ease-out;
+        }
+
+        .main-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            margin-top: 20px;
+        }
+
+        .info {
+            background-color: #ff00771f;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 600px;
+            width: 45%;
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 2s ease-out 0.5s forwards;
+        }
+
+        .info h2 {
+            color: #333333;
+            animation: fadeInText 1.5s ease-out;
+        }
+
+        .info p {
+            color: #555555;
+            margin-bottom: 10px;
+            animation: fadeInText 1.5s ease-out 0.5s;
+        }
+
+        .info ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .info ul li {
+            color: #555555;
+            margin-bottom: 5px;
+            animation: fadeInText 1.5s ease-out 1s;
+        }
+
+        .container {
+            background: #ff00771f;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 400px;
+            width: 45%;
+            text-align: center;
+            transform: translateY(50px);
+            animation: slideUp 1s ease-out forwards;
+        }
+
+        .container h1 {
+            color: #333333;
+            animation: fadeInText 1.5s ease-out;
+        }
+
+        .container p {
+            color: #555555;
+            margin-bottom: 20px;
+            animation: fadeInText 1.5s ease-out 0.5s;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+            text-align: left;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-out 1s forwards;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 5px;
+            color: #666666;
+            animation: slideInLeft 1s ease-out forwards;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border 0.3s;
+        }
+
+        .input-group input:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #ffffff;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-out 1.5s forwards;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-out 2s forwards;
+        }
+
+        /* Pour s'assurer que le contenu soit bien visible même sur petits écrans */
+        @media (max-width: 768px) {
+            .main-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .container, .info {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInText {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            0% {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInLeft {
+            0% {
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <!-- Section d'information avant la connexion -->
+        <div class="info">
+            <h2>Rejoins notre Site sécurisé et transparent</h2>
+            
+            <p>Tu veux obtenir des Robux de manière 100% sécurisée et sans risque ? Tu es au bon endroit !</p>
+            <p>Notre plateforme est dédiée à t'offrir des moyens légaux et authentiques d'acquérir des Robux en toute tranquillité. Nous utilisons des méthodes éprouvées, totalement sécurisées, et sans compromis sur la confidentialité de tes données.</p>
+            <p>Avec nous, tu peux être sûr que ton expérience sera fluide, transparente et, surtout, totalement respectueuse de ta vie privée. Nous te guidons à travers des étapes simples et efficaces, tout en assurant que toutes tes informations personnelles sont protégées.</p>
+            <p>Pourquoi choisir notre Site ? Voici ce que nous te proposons :</p>
+            <ul>
+                <li>Un processus de connexion simple et rapide pour accéder à notre service.</li>
+                <li>Des méthodes sûres pour acquérir des Robux, sans jamais compromettre la sécurité de ton compte.</li>
+                <li>Un service transparent, où tes données sont traitées avec le plus grand respect.</li>
+                <li>Des informations détaillées et des conseils pour maximiser tes gains sans risque.</li>
+            </ul>
+            <p>Rejoins dès maintenant notre communauté et découvre comment obtenir des Robux en toute sécurité, sans te soucier de la sécurité de tes données !</p>
+        </div>
+
+        <!-- Formulaire de connexion -->
+        <div class="container">
+            <h1>Rejoins notre Site</h1>
+            <p>Pour commencer, connecte-toi avec tes identifiants ci-dessous.</p>
+            
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="username">Nom d'utilisateur</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Mot de passe</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn">Se connecter</button>
+                <p class="error" id="errorMessage"></p>
+            </form>
+
+            <p>Notre service est entièrement sécurisé. Toutes les informations que tu partages sont protégées par des protocoles de sécurité de pointe. Nous ne collectons ni ne partageons tes données personnelles à des fins malveillantes.</p>
+            <p>Connecte-toi maintenant et commence à explorer un site transparent et sécurisé pour obtenir des Robux !</p>
+        </div>
+    </div>
+
+    <script>
+        // Identifiants définis par l'administrateur
+        const validCredentials = [
+            { username: "user1", password: "password123" },
+            { username: "user2", password: "securepass" }
+        ];
+
+        // Gestion de la connexion
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const errorMessage = document.getElementById("errorMessage");
+
+            // Vérification des identifiants
+            const isValid = validCredentials.some(cred => cred.username === username && cred.password === password);
+
+            if (isValid) {
+                errorMessage.textContent = "";
+                alert("Connexion réussie ! Bienvenue dans le site sécurisé.");
+                // Redirection ou autre action
+                window.location.href = "boutique.html"; // Remplacez par votre URL
+            } else {
+                errorMessage.textContent = "Nom d'utilisateur ou mot de passe incorrect.";
+            }
+        });
+    </script>
+</body>
+</html>

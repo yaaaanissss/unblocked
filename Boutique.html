@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robux Selector</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background: url('test.jpg') no-repeat center center fixed; /* Remplacez 'background.jpg' par le nom de votre fichier d'image */
+            background-size: cover;
+            color: white;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+        }
+        h1 {
+            color: #ffeb3b;
+        }
+        label, select, button {
+            margin: 10px 0;
+            display: block;
+        }
+        select, button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        select {
+            background-color: #333;
+            color: white;
+        }
+        button {
+            background-color: #4caf50;
+            color: white;
+            animation: fadeInText 1.5s ease-out 0.5s;
+            transition: all 0.3s ease;
+        }
+        button:hover {
+            background-color: #45a049;   /* Légère modification de couleur lors du survol */
+            color: white;                /* Conserver la couleur du texte */
+            transform: scale(1.05);      /* Légère animation de zoom */
+        }
+        .mystery-btn {
+            background-color: #ff5722;  /* Couleur bouton mystère */
+            animation: fadeInText 1.5s ease-out 1s;
+        }
+        .mystery-btn:hover {
+            background-color: #e64a19;   /* Légère modification de couleur lors du survol */
+            color: white;                /* Conserver la couleur du texte */
+            transform: scale(1.05);      /* Légère animation de zoom */
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sélectionnez vos Robux</h1>
+        <label for="amount">Montant (€):</label>
+        <select id="amount">
+            <option value="10">10€ - 800 Robux</option>
+            <option value="20">20€ - 1700 Robux</option>
+            <option value="50">50€ - 4500 Robux</option>
+            <option value="100">100€ - 10000 Robux</option>
+        </select>
+        <button onclick="redirectToLogin()">Obtenir Robux</button>
+        <button class="mystery-btn" onclick="redirectToLogin()">Bouton Mystère</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        // Rediriger l'utilisateur vers la page de connexion
+        function redirectToLogin() {
+            const resultDiv = document.getElementById("result");
+            resultDiv.textContent = "Redirection vers la page de connexion...";
+
+            // Redirection après 2 secondes
+            setTimeout(() => {
+                window.location.href = "connexion.html"; // Changez "connexion.html" par le nom de votre fichier de connexion.
+            }, 2000);
+        }
+    </script>
+</body>
+</html>

